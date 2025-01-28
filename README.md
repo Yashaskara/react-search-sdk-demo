@@ -1,4 +1,4 @@
-# React Parcel App
+# React App With React Search SDK Demo
 
 A minimal React application bundled with Parcel.
 
