@@ -1,0 +1,22 @@
+{
+  "name": "react-app-with-unbxd-sdk",
+  "version": "1.0.0",
+  "description": "A minimal React application to demonstrate the powers of Unbxd React Search SDK",
+  "source": "src/index.html",
+  "scripts": {
+    "start": "parcel src/index.html",
+    "build": "parcel build src/index.html",
+    "clean": "rm -rf dist .parcel-cache"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  },
+  "devDependencies": {
+    "parcel": "^2.9.3",
+    "process": "^0.11.10"
+  }
+}
