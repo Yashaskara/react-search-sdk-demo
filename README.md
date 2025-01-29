@@ -11,7 +11,7 @@ A minimal React application bundled with Parcel.
 
 1. Clone the repository
 ```bash
-git clone <repository-url>
+git clone https://github.com/Yashaskara/react-search-sdk-demo.git
 cd react-app
 ```
 
