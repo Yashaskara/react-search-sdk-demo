@@ -8,9 +8,9 @@ import "@unbxd-ui/react-search-components/dist/styles/fixedPagination.css";
 import "@unbxd-ui/react-search-components/dist/styles/selectedFacets.css";
 import "@unbxd-ui/react-search-components/dist/styles/productViewDropdown.css";
 import "@unbxd-ui/react-search-components/dist/styles/pageSize.css";
-
-
-
+import "@unbxd-ui/react-search-components/dist/styles/sortDropdown.css";
+import "@unbxd-ui/react-search-components/dist/styles/breadcrumb.css";
+import "@unbxd-ui/react-search-components/dist/styles/summary.css";
 
 function App() {
     return (

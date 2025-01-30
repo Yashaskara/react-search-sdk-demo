@@ -1,5 +1,7 @@
+
+
 import { UnbxdSearchWrapper } from "@unbxd-ui/react-search-hooks";
-import { SearchBox, Products, Image, Facets, SelectedFacets, RangeFacet, CheckboxFacet, MultilevelFacet, SelectedFacets, ButtonFacet, RangeFacet, PageSize, SortDropdown } from "@unbxd-ui/react-search-components";
+import { SearchBox, Products, Summary, Image, Facets, SelectedFacets, RangeFacet, CheckboxFacet, MultilevelFacet, SelectedFacets, ButtonFacet, RangeFacet, PageSize, SortDropdown, Breadcrumb } from "@unbxd-ui/react-search-components";
 import { FixedPagination } from "@unbxd-ui/react-search-components";
 
 // import "@unbxd-ui/react-search-components/dist/styles/selectedFacets.css";
@@ -201,7 +203,7 @@ function Plp() {
                         // Custom CSS classes
                         styles={{
                             root: "searchbox-root searchbox-custom",
-                            label: "searchbox-label",
+                            label: "searchbox-label searchbox-custom-clear-btn",
                             input: "searchbox-input searchbox-custom-input",
                             clearButton: "search-clear-btn searchbox-custom-clear-btn",
                             submitButton: "searchbox-btn"
@@ -242,23 +244,49 @@ function Plp() {
                     // }}
                     />
 
-                    <PageSize text={"Products per page:"} options={[3, 6, 9, 12, 15, 18, 21, 24, 27, 30]} />
-                    <SortDropdown
-                        name="sort"
-                        options={[
-                            {
-                                value: "price desc",
-                                label: "Price High to Low",
-                            },
-                            {
-                                value: "price asc",
-                                label: " Price Low to High",
-                            },
-                        ]} />
+                    <div className="page-size-sort-container">
+                        <PageSize text={"Products per page:"} options={[3, 6, 9, 12, 15, 18, 21, 24, 27, 30]} />
+                        <SortDropdown
+                            name="sort"
+                            options={[
+                                {
+                                    value: "",
+                                    label: "Relevance",
+                                },
+                                {
+                                    value: "price desc",
+                                    label: "Price High to Low",
+                                },
+                                {
+                                    value: "price asc",
+                                    label: " Price Low to High",
+                                },
+                                {
+                                    value: "type asc",
+                                    label: " Type Low to High",
+                                },
+                            ]}
+
+                            styles={{
+                                wrapper: "sort-root",
+                                label: "sort-label",
+                                selectWrapper: "sort-dd-wrapper",
+                                select: "sort-dd-select",
+                                body: "sort-dd-body",
+                                option: "sort-dd-option",
+                                selected: "sort-dd-selected",
+                                activatorWrapper: "sort-activator",
+                                activatorText: "sort-text",
+                                activatorIcon: "sort-icon"
+                            }}
+                        />
+                    </div>
                 </div>
+                <Summary />
 
                 <div className="plp-container">
                     <SelectedFacets />
+                    {/* <Breadcrumb name="category" /> */}
 
                     <div className="facets-container">
 
@@ -321,6 +349,16 @@ function Plp() {
                                 body: "facets-body facets-body-custom"
                             }}
                         />
+                        {/* <MultilevelFacet name="categoryPath1_uFilter"
+                            showAllParents={true}
+                            defaultOpen={false}
+                            renderAs="dropdown"
+                            styles={{
+                                root: "facets-root",
+                                body: "facets-body facets-body-custom"
+                            }}
+                        /> */}
+
                     </div>
 
 
@@ -336,6 +374,28 @@ function Plp() {
                     }}
                     viewAs="BUTTONS"
                     pageLimit={10}
+                    styles={{
+                        // wrapper: "pagination-wrapper", // used for the component wrapper
+                        // firstPageBtn: "first-page-btn", // used for the first page button component
+                        // prevPageBtn: "prev-page-btn", // used for the previous page button component
+                        // nextPageBtn: "next-page-btn", // used for the next page button component
+                        // lastPageBtn: "last-page-btn", // used for the last page button component
+                        buttons: {
+                            wrapper: "pagination-buttons-wrapper pagination-buttons-wrapper-custom", // used for the wrapper for page number buttons wrapper
+                            pageBtn: "page-btn", // used for each page number button component
+                            currentPageBtn: "current-page-btn", // used for the current page number button component
+                        },
+                        // dropdown: {
+                        //     wrapper: "pagination-dropdown", // used for the pages dropdown wrapper component
+                        //     label: "label", // used for the label for the select dropdown component
+                        //     select: "select", // used for the select dropdown component
+                        // },
+                        // input: {
+                        //     wrapper: "pagination-input", // used for the wrapper of the input element
+                        //     input: "input", // used for the input element
+                        //     button: "button", // used for the 'Go' button
+                        // }
+                    }}
                 />
             </UnbxdSearchWrapper>
 
